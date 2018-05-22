@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="super_package.Actionclass">
+        <methods>
+          <include name="read_uievidence"/>
+          <include name="Write_exceltocompare"/>
+          <include name="click_on_report"/>
+          <include name="open_browser"/>
+          <include name="close_browser"/>
+        </methods>
+      </class> <!-- super_package.Actionclass -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

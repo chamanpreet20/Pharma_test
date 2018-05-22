@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Sample Test Suite]">
+  <test name="Sample Test(failed)">
+    <classes>
+      <class name="super_package.Actionclass">
+        <methods>
+          <include name="compareUI_Excel"/>
+          <include name="open_browser"/>
+          <include name="close_browser"/>
+        </methods>
+      </class> <!-- super_package.Actionclass -->
+    </classes>
+  </test> <!-- Sample Test(failed) -->
+</suite> <!-- Failed suite [Sample Test Suite] -->
