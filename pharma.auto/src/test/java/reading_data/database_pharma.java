@@ -23,7 +23,7 @@ public static void main(String[] args) throws ClassNotFoundException, SQLExcepti
 	 while (rs.next()){
  		String indication_id = rs.getString("Id");
  		 String reportname = rs.getString("ReportCodeName");	
- 		System.out.println(indication_id+ " \n " +reportname);	
+ 		System.out.println(indication_id+ " \n " +reportname);
      }
 	 conn.close();
 	}

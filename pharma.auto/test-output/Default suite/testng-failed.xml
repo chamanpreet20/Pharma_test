@@ -6,7 +6,7 @@
       <class name="super_package.Actionclass">
         <methods>
           <include name="read_uievidence"/>
-          <include name="Write_exceltocompare"/>
+          <include name="compareUI_Excel"/>
           <include name="click_on_report"/>
           <include name="open_browser"/>
           <include name="close_browser"/>

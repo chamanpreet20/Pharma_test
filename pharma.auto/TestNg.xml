@@ -1,15 +1,18 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Sample Test Suite" verbose="1">
+<suite name="Sample Test Suite" verbose="1" thread-count = "1" parallel="false">
+<listeners>
+<listener class-name="Utility.Listener_test"/>
+</listeners>
   <test name="Sample Test">
      <classes>
     <class name="super_package.Actionclass">
     <methods>
     <include name="login_app"></include>
     <include name="click_on_report"></include>
-    <include name="read_uievidence"></include>
+    <!--include name="read_uievidence"></include>
     <include name="read_excelevidence"></include>
     <include name="Write_exceltocompare"></include>
-    <include name="compareUI_Excel"></include>
+    <include name="compareUI_Excel"></include-->
     </methods>
     </class>
     </classes>

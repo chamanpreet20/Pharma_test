@@ -25,7 +25,6 @@ public void explicitwait(int time,String str) throws Exception
 	 WebDriverWait wait = new WebDriverWait(driver, time);
 //wait.until(ExpectedConditions.visibilityOfElementLocated(ro.getLocator(str)));
 wait.until(ExpectedConditions.visibilityOf(driver.findElement(ro.getLocator(str))));
-
 	}
 
 public void implicitwait(int time)

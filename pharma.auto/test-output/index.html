@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Sample_Test_Suite">
-                    <span>C:\Users\chaman.preet\Documents\C_data\Pharma workspace\pharma.auto\TestNg.xml</span>
+                    <span>C:\Users\chaman.preet\git\pharma_git\pharma.auto\TestNg.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods, 1 failed,   5 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-Sample_Test_Suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Sample_Test_Suite" title="super_package.Actionclass" hash-for-method="compareUI_Excel">compareUI_Excel</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Sample_Test_Suite" title="super_package.Actionclass" hash-for-method="click_on_report">click_on_report</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Sample_Test_Suite -->
@@ -116,27 +116,7 @@
                     <div class="method-list-content passed suite-Sample_Test_Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Sample_Test_Suite" title="super_package.Actionclass" hash-for-method="Write_exceltocompare">Write_exceltocompare</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Sample_Test_Suite" title="super_package.Actionclass" hash-for-method="click_on_report">click_on_report</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Sample_Test_Suite" title="super_package.Actionclass" hash-for-method="login_app">login_app</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Sample_Test_Suite" title="super_package.Actionclass" hash-for-method="read_excelevidence">read_excelevidence</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Sample_Test_Suite" title="super_package.Actionclass" hash-for-method="read_uievidence">read_uievidence</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Sample_Test_Suite -->
@@ -159,15 +139,35 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="compareUI_Excel">
-                  </a> <!-- compareUI_Excel -->
-                  <span class="method-name">compareUI_Excel</span>
-                  <div class="stack-trace">java.lang.IndexOutOfBoundsException: Index: 1, Size: 0
-	at java.util.ArrayList.rangeCheck(ArrayList.java:657)
-	at java.util.ArrayList.get(ArrayList.java:433)
-	at Test_cases.Compare_UIwithexcel.compareUInExcel(Compare_UIwithexcel.java:72)
-	at super_package.Actionclass.compareUI_Excel(Actionclass.java:81)
-... Removed 25 stack frames
+                  <a name="click_on_report">
+                  </a> <!-- click_on_report -->
+                  <span class="method-name">click_on_report</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[text()=&apos; Epidemilogy Research&apos;]&quot;}
+  (Session info: chrome=67.0.3396.79)
+  (Driver info: chromedriver=2.37.544315 (730aa6a5fdba159ac9f4c1e8cbc59bf1b5ce12b7),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;EVS01CPB424&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_162&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.37.544315 (730aa6a5fdba15..., userDataDir: C:\Users\CHAMAN~1.PRE\AppDa...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 67.0.3396.79, webStorageEnabled: true}
+Session ID: 7242bd12ef36e47033891af1ff85cc3a
+*** Element info: {Using=xpath, value=//a[text()=&apos; Epidemilogy Research&apos;]}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:421)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)
+	at Test_cases.Report_selection.clickreport(Report_selection.java:90)
+	at super_package.Actionclass.click_on_report(Actionclass.java:67)
+... Removed 29 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -181,20 +181,6 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Write_exceltocompare">
-                  </a> <!-- Write_exceltocompare -->
-                  <span class="method-name">Write_exceltocompare</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="click_on_report">
-                  </a> <!-- click_on_report -->
-                  <span class="method-name">click_on_report</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="login_app">
                   </a> <!-- login_app -->
                   <span class="method-name">login_app</span>
@@ -202,42 +188,27 @@
 (Login to application)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="read_excelevidence">
-                  </a> <!-- read_excelevidence -->
-                  <span class="method-name">read_excelevidence</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="read_uievidence">
-                  </a> <!-- read_uievidence -->
-                  <span class="method-name">read_uievidence</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Sample_Test_Suite-class-passed -->
         </div> <!-- panel Sample_Test_Suite -->
         <div panel-name="test-xml-Sample_Test_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\chaman.preet\Documents\C_data\Pharma workspace\pharma.auto\TestNg.xml</span>
+            <span class="header-content">C:\Users\chaman.preet\git\pharma_git\pharma.auto\TestNg.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Sample Test Suite&quot;&gt;
+&lt;suite thread-count=&quot;1&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Sample Test Suite&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;Utility.Listener_test&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test name=&quot;Sample Test&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;super_package.Actionclass&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;login_app&quot;/&gt;
           &lt;include name=&quot;click_on_report&quot;/&gt;
-          &lt;include name=&quot;read_uievidence&quot;/&gt;
-          &lt;include name=&quot;read_excelevidence&quot;/&gt;
-          &lt;include name=&quot;Write_exceltocompare&quot;/&gt;
-          &lt;include name=&quot;compareUI_Excel&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- super_package.Actionclass --&gt;
     &lt;/classes&gt;
@@ -279,31 +250,15 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(6);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'click_on_report')
+data.setCell(0, 1, 'login_app')
 data.setCell(0, 2, 'super_package.Actionclass')
-data.setCell(0, 3, 6569);
+data.setCell(0, 3, 16116);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'login_app')
+data.setCell(1, 1, 'click_on_report')
 data.setCell(1, 2, 'super_package.Actionclass')
-data.setCell(1, 3, 4906);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'Write_exceltocompare')
-data.setCell(2, 2, 'super_package.Actionclass')
-data.setCell(2, 3, 3618);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'read_uievidence')
-data.setCell(3, 2, 'super_package.Actionclass')
-data.setCell(3, 3, 3144);
-data.setCell(4, 0, 4)
-data.setCell(4, 1, 'read_excelevidence')
-data.setCell(4, 2, 'super_package.Actionclass')
-data.setCell(4, 3, 486);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'compareUI_Excel')
-data.setCell(5, 2, 'super_package.Actionclass')
-data.setCell(5, 3, 2);
+data.setCell(1, 3, 2402);
 window.suiteTableData['Sample_Test_Suite']= { tableData: data, tableDiv: 'times-div-Sample_Test_Suite'}
 return data;
 }
@@ -323,9 +278,22 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Sample_Test_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">4 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">super_package.Actionclass</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">read_uievidence</span>
+                <br/>
+                <span class="ignored-method-name">compareUI_Excel</span>
+                <br/>
+                <span class="ignored-method-name">Write_exceltocompare</span>
+                <br/>
+                <span class="ignored-method-name">read_excelevidence</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Sample_Test_Suite" class="panel">
@@ -335,40 +303,32 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">super_package.Actionclass</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">beforesuite</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
                 <span class="method-name">open_browser</span>
-                <span class="method-start">0 ms</span>
+                <span class="method-start">117 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">login_app</span>
-                <span class="method-start">4257 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">click_on_report</span>
-                <span class="method-start">9165 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">read_uievidence</span>
-                <span class="method-start">15735 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">read_excelevidence</span>
-                <span class="method-start">18880 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">Write_exceltocompare</span>
-                <span class="method-start">19367 ms</span>
+                <span class="method-start">5024 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">compareUI_Excel</span>
-                <span class="method-start">22986 ms</span>
+                <span class="method-name">click_on_report</span>
+                <span class="method-start">21151 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">close_browser</span>
-                <span class="method-start">22991 ms</span>
+                <span class="method-start">24108 ms</span>
               </div> <!-- configuration-test after -->
+              <div class="configuration-suite after">
+                <span class="method-name">aftersuite</span>
+                <span class="method-start">25240 ms</span>
+              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
