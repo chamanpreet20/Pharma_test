@@ -65,12 +65,12 @@ public class Listener_test extends Actionclass implements ITestListener {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				
 			try {
 				test.addScreenCaptureFromPath(screenShotPath);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-				
 			}
 
 		
