@@ -18,8 +18,16 @@ import Test_cases.Login;
 import Test_cases.Report_selection;
 import Test_cases.Evidence_summary;
 import POI_Readwrite.Read_ClientExcel;
+import POI_Readwrite.Read_ClientExcel_Baseline_util;
+import POI_Readwrite.Read_ClientExcel_Citation_util;
 import POI_Readwrite.Write_exceltocompare;
+import POI_Readwrite.Write_exceltocompare_baseline_util;
+import POI_Readwrite.Write_exceltocompare_cit_util;
 import Test_cases.Compare_UIwithexcel;
+import Test_cases.Compare_UIwithexcel_baseline_util;
+import Test_cases.Compare_UIwithexcel_cit_util;
+import Test_cases.Evidence_Reference_Baseline;
+import Test_cases.Evidence_Reference_Citation;
 
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
@@ -76,7 +84,20 @@ public class Actionclass {
 		es.click_Evidence();
 		es.Read_Evidence();		
 	}
-	
+//==========================================Create object of Evidence_CitationDetails class and call methods===========================================	
+	@Test
+	public void read_uicitation() throws Exception{
+		Evidence_Reference_Citation ecit= new Evidence_Reference_Citation(driver);
+		ecit.click_RefCit();
+		ecit.Read_Citation();
+	}	
+//==========================================Create object of Evidence_BaselinestudyDetails class and call methods===========================================	
+	@Test
+	public void read_uibaselinestudy() throws Exception{
+		Evidence_Reference_Baseline ebase= new Evidence_Reference_Baseline(driver);
+		ebase.click_Refbaseline();
+		ebase.Read_Baseline();
+	}		
 //==========================================Create object of Read_ClientExcel class and call methods===========================================
 	@Test
 	public void read_excelevidence() throws Exception
@@ -87,6 +108,22 @@ public class Actionclass {
 				
 	}
 	
+//==========================================Create utility object of Read_ClientExcel_Citation class and call methods===========================================
+	@Test
+	public void read_excelevidence_cit_util() throws Exception
+	{
+		Read_ClientExcel_Citation_util rc=new Read_ClientExcel_Citation_util();
+		rc.read_evidence_excel();
+					
+	}		
+//==========================================Create object of utility  Read_ClientExcel_BaselineStudy class and call methods===========================================
+	@Test
+	public void read_excelevidence_baseline_util() throws Exception
+	{
+		Read_ClientExcel_Baseline_util rc=new Read_ClientExcel_Baseline_util();
+		rc.read_evidence_excel();
+							
+		}		
 //==========================================Create object of Write_exceltocompare class and call methods===========================================
 	@Test
 	public void Write_exceltocompare() throws IOException
@@ -97,7 +134,24 @@ public class Actionclass {
 		we.read_formatted_excel();
 		we.getList();
 	}
-	
+//==========================================Create object of util Write_exceltocompare_cit class and call methods===========================================
+	@Test
+	public void Write_excel_cit_util() throws IOException
+	{
+		Write_exceltocompare_cit_util we=new Write_exceltocompare_cit_util();
+		we.write_evidence();
+		we.read_formatted_excel();
+		we.getList();
+		}	
+//==========================================Create object of utility Write_exceltocompare_baseline class and call methods===========================================
+	@Test
+	public void Write_excel_baseline_util() throws IOException
+	{
+		Write_exceltocompare_baseline_util we=new Write_exceltocompare_baseline_util();
+		we.write_evidence();
+		we.read_formatted_excel();
+		we.getList();
+	}	
 //==========================================Create object of Compare_UIwithexcel class and call methods===========================================
 	@Test
 	public void compareUI_Excel()
@@ -106,7 +160,21 @@ public class Actionclass {
 		Compare_UIwithexcel Ce=new Compare_UIwithexcel();
 		Ce.compareUInExcel();
 	}
-	
+//==========================================Create object of Compare_UIwithexcel_cit class and call methods===========================================
+	@Test
+	public void compareUI_Excel_cit_util()
+		{
+			Compare_UIwithexcel_cit_util Ce=new Compare_UIwithexcel_cit_util();
+			Ce.compareUInExcel();
+			}
+//==========================================Create object of utility Compare_UIwithexcel_baseline class and call methods===========================================
+	@Test
+	public void compareUI_Excel_baseline_util()
+	{
+		Compare_UIwithexcel_baseline_util Ce=new Compare_UIwithexcel_baseline_util();
+		Ce.compareUInExcel();
+		}							
+			
 //=======================================Close browser after test=============================================================
 	@AfterTest
 	public void close_browser()

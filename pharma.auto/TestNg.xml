@@ -1,20 +1,56 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Sample Test Suite" verbose="1" thread-count = "1" parallel="false">
-<listeners>
-<listener class-name="Utility.Listener_test"/>
-</listeners>
+<suite name="Sample Test Suite" verbose="1">
   <test name="Sample Test">
      <classes>
     <class name="super_package.Actionclass">
     <methods>
-    <include name="login_app"></include>
-    <include name="click_on_report"></include>
-    <!--include name="read_uievidence"></include>
+     <include name="login_app"></include>
+     <include name="click_on_report"></include>
+    <!-- <include name="read_uievidence"></include>
+     <include name="read_excelevidence_util"></include>-->
+     
+     
+     
+     <!-- Steps for Baseline compare using utility -->
+     <include name="read_uibaselinestudy"></include>
+     <include name="read_excelevidence_baseline_util"></include>
+     <include name="Write_excel_baseline_util"></include>
+     <include name="compareUI_Excel_baseline_util"></include> 
+     
+     
+     <!-- Steps for Citation compare using utility -->
+     <!-- <include name="read_uicitation"></include>
+     <include name="read_excelevidence_cit_util"></include>
+     <include name="Write_excel_cit_util"></include>
+     <include name="compareUI_Excel_cit_util"></include> -->
+      
+      
+     
+     <!--Steps for Baseline Study tab compare
+    <include name="read_uibaselinestudy"></include>
+    <include name="read_excelevidence_baseline"></include>
+    <include name="Write_excel_baseline"></include>
+    <include name="compareUI_Excel_baseline"></include>-->
+    
+    
+           
+    
+    <!--  Steps for Citation tab compare
+    <include name="read_uicitation"></include>
+    <include name="read_excelevidence_cit"></include>
+    <include name="Write_excel_cit"></include>
+    <include name="compareUI_Excel_cit"></include>-->
+       
+       
+    <!-- Steps for Summary tab compare 
+    <include name="read_uievidence"></include>
     <include name="read_excelevidence"></include>
-    <include name="Write_exceltocompare"></include>
-    <include name="compareUI_Excel"></include-->
+     <include name="Write_exceltocompare"></include>
+    <include name="compareUI_Excel"></include>-->
+    
     </methods>
     </class>
     </classes>
     </test>
     </suite>
+    
