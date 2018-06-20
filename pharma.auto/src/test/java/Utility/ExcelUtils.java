@@ -31,8 +31,7 @@ public class ExcelUtils {
     public int getLastrow(String sheetname){
     	int lastrow;
     	lastrow=workbook.getSheet(sheetname).getLastRowNum();
-    	return lastrow;
-    	
+    	return lastrow;	
     }
     
     public String getCellData(String sheetName,String colName, int rowNum){
@@ -85,5 +84,4 @@ public class ExcelUtils {
     		return null;
     	}
     }     
-    
 }
