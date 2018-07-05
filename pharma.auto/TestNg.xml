@@ -6,6 +6,9 @@
     <methods>
      <include name="login_app"></include>
      <include name="click_on_report"></include>
+      <include name="read_uievidence_common"></include>
+     <include name="read_excelevidence_common"></include>
+     <include name="compareUI_Excel_common"></include>
     <!-- <include name="read_uievidence"></include>
      <include name="read_excelevidence_util"></include>-->
      

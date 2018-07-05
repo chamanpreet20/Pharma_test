@@ -1,5 +1,6 @@
 package Utility;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -14,6 +15,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtils {
+	public File file=null;
 	public FileInputStream fis = null;
     public XSSFWorkbook workbook = null;
     public XSSFSheet sheet = null;
@@ -23,6 +25,7 @@ public class ExcelUtils {
 	
     
     public ExcelUtils(String xlFilePath) throws IOException{
+    	file=new File(xlFilePath);
     	fis = new FileInputStream(xlFilePath);
         workbook = new XSSFWorkbook(fis);
         fis.close();
@@ -33,7 +36,21 @@ public class ExcelUtils {
     	lastrow=workbook.getSheet(sheetname).getLastRowNum();
     	return lastrow;	
     }
+    public int getFirstrow(String sheetname){
+    	int firstrow;
+    	firstrow=workbook.getSheet(sheetname).getFirstRowNum();
+    	return firstrow;
+    	
+    }
     
+    public int getLastcellnum(String sheetname,int rowNum){
+    	int lastcell;
+    	row=workbook.getSheet(sheetname).getRow(rowNum);
+    	lastcell=row.getLastCellNum();
+    	return lastcell;
+    	
+    }
+    //================read excel by column name==========
     public String getCellData(String sheetName,String colName, int rowNum){
     	try{
     	int col_num=-1;
@@ -83,5 +100,49 @@ public class ExcelUtils {
     		System.out.println("Column  | " + colName + "not exists in sheet:  " + sheetName);
     		return null;
     	}
-    }     
+    }  
+  //================read excel by column index==========
+    public String getCellData(String sheetName,int colIndex, int rowNum){
+    	try{
+    	sheet=workbook.getSheet(sheetName);
+    	FormulaEvaluator evaluator = workbook.getCreationHelper().createFormulaEvaluator();
+    	String celldata=null;
+    	Hyperlink linkURL;
+    	//System.out.println("Cell count || " + row.getLastCellNum());
+    	    	
+    	row = sheet.getRow(rowNum);
+        cell = row.getCell(colIndex);
+        
+        switch(cell.getCellType()){
+	        case Cell.CELL_TYPE_STRING:
+	        	linkURL=cell.getHyperlink();
+	        	if(linkURL!=null){
+	        		celldata=linkURL.getAddress();
+	        	}
+	        	else{        	
+	        		celldata=cell.getStringCellValue();
+	        	}
+	        	break;
+	        case Cell.CELL_TYPE_FORMULA:
+	        	celldata=format.formatCellValue(cell,evaluator);
+	        	break;
+	        case Cell.CELL_TYPE_NUMERIC:
+	        	celldata=format.formatCellValue(cell);
+	        	break;
+	        case Cell.CELL_TYPE_BOOLEAN:
+	        	celldata=String.valueOf(cell.getBooleanCellValue());
+	        	break;
+	        case Cell.CELL_TYPE_BLANK:
+	        	celldata="";
+	        	break;
+        }
+        //System.out.println("value in getcelldata  |  " + celldata);
+        return celldata;
+    	       	    
+         }
+    	catch(Exception e){
+    		//System.out.println("Column  | " + colName + "not exists in sheet:  " + sheetName);
+    		return null;
+    	}
+    } 
 }
