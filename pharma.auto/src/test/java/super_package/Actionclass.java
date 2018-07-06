@@ -12,20 +12,25 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import Test_cases.Login;
+import Test_cases.ReadUITabs;
 import Test_cases.Report_selection;
 import Test_cases.Evidence_summary;
 import POI_Readwrite.Read_ClientExcel;
 import POI_Readwrite.Read_ClientExcel_Baseline_util;
 import POI_Readwrite.Read_ClientExcel_Citation_util;
+import POI_Readwrite.Read_ClientExcel_common;
 import POI_Readwrite.Write_exceltocompare;
 import POI_Readwrite.Write_exceltocompare_baseline_util;
 import POI_Readwrite.Write_exceltocompare_cit_util;
+import POI_Readwrite.Write_exceltocompare_common;
 import Test_cases.Compare_UIwithexcel;
 import Test_cases.Compare_UIwithexcel_baseline_util;
 import Test_cases.Compare_UIwithexcel_cit_util;
+import Test_cases.Compare_UIwithexcel_common;
 import Test_cases.Evidence_Reference_Baseline;
 import Test_cases.Evidence_Reference_Citation;
 
@@ -55,7 +60,11 @@ public class Actionclass {
 		App_logs.info("Open browser");
 		driver.manage().window().maximize();
 	}
-	
+	@DataProvider(name = "tabnameDP")
+	public static String[] Tabnames(){
+		return new String[]{"CitationDetails","BaselineStudyPopulationDetails"} ;
+		
+	}	
 //==========================================Create object of login class and call methods===========================================
 	@Test(description="Login to application")
 	public void login_app() throws Exception
@@ -74,7 +83,16 @@ public class Actionclass {
 		rs.Getreportname();
 		rs.clickreport();
 	}
+//==========================================Create object of ReadUITabs class and call methods===========================================
 	
+		//@Parameters({ "tabName" })
+		@Test(dataProvider = "tabnameDP")
+		public void read_uievidence_common(String tabName) throws Exception
+		{
+		    ReadUITabs es=new ReadUITabs(driver);
+			es.click_Tab(tabName);
+			es.Read_Evidence(tabName);
+			}		
 //==========================================Create object of Evidence_summary class and call methods===========================================
 	@Test
 	public void read_uievidence() throws Exception
@@ -107,7 +125,15 @@ public class Actionclass {
 		rc.read_evidence_excel();
 				
 	}
-	
+	//==========================================Create object of Read_ClientExcel_common class and call methods===========================================
+			@Test(dataProvider = "tabnameDP")
+			public void read_excelevidence_common(String tableName) throws Exception
+			{
+				Read_ClientExcel_common rc=new Read_ClientExcel_common();
+				rc.read_evidence_excel(tableName);
+				rc.write_evidence(tableName);
+						
+			}		
 //==========================================Create utility object of Read_ClientExcel_Citation class and call methods===========================================
 	@Test
 	public void read_excelevidence_cit_util() throws Exception
@@ -134,6 +160,16 @@ public class Actionclass {
 		we.read_formatted_excel();
 		we.getList();
 	}
+	//==========================================Create object of Write_exceltocompare_common class and call methods===========================================
+	
+			@Test(dataProvider = "tabnameDP",dependsOnMethods = { "read_excelevidence_common" })
+			public void Write_excel_common(String tableName) throws IOException
+				{
+				Write_exceltocompare_common we=new Write_exceltocompare_common();
+				we.write_evidence(tableName);
+				we.read_formatted_excel(tableName);
+				//we.getList();
+							}	
 //==========================================Create object of util Write_exceltocompare_cit class and call methods===========================================
 	@Test
 	public void Write_excel_cit_util() throws IOException
@@ -160,6 +196,14 @@ public class Actionclass {
 		Compare_UIwithexcel Ce=new Compare_UIwithexcel();
 		Ce.compareUInExcel();
 	}
+	//==========================================Create object of Compare_UIwithexcel_common class and call methods===========================================
+			@Test(dataProvider = "tabnameDP")
+			public void compareUI_Excel_common(String tableName) throws IOException
+				{
+					Compare_UIwithexcel_common Ce=new Compare_UIwithexcel_common();
+					Ce.compareUInExcel(tableName);
+				}					
+		
 //==========================================Create object of Compare_UIwithexcel_cit class and call methods===========================================
 	@Test
 	public void compareUI_Excel_cit_util()
